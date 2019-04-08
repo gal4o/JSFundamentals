@@ -1,0 +1,38 @@
+function solve(steps, footprint, speed) {
+	let distanse = Number(steps)*Number(footprint);
+	let moreMin = Math.floor(distanse/500);
+	let time = (distanse)/((Number(speed)/36)*10)+moreMin*60;
+	let m = Math.floor(time/60);
+	let s = Math.round(time%60);
+	let h = Math.floor(m/60);
+	m=m%60;
+	if(h<=9){
+		if(m<=9) {
+			if (s<=9){
+				console.log(`0${h}:0${m}:0${s}`);
+			} else {
+				console.log(`0${h}:0${m}:${s}`);
+			}
+		} else {
+			if(s<=9){
+				console.log(`0${h}:${m}:0${s}`);
+			} else {
+				console.log(`0${h}:${m}:${s}`);
+			}
+		}
+	} else {
+		if(m<=9) {
+			if (s<=9){
+				console.log(`${h}:0${m}:0${s}`);
+			} else {
+				console.log(`${h}:0${m}:${s}`);
+			}
+		} else {
+			if(s<=9){
+				console.log(`${h}:${m}:0${s}`);
+			} else {
+				console.log(`${h}:${m}:${s}`);
+			}
+		}
+	}
+}
